@@ -2,6 +2,7 @@ package com.example.vinmar.portfolio;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,34 +11,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*
-        Button[] portfolio_buttons = new Button[6];
-
-        portfolio_buttons[0] = (Button) findViewById(R.id.spotify_streamer_button_id);
-        portfolio_buttons[1] = (Button) findViewById(R.id.scores_app_button_id);
-        portfolio_buttons[2] = (Button) findViewById(R.id.library_app_button_id);
-        portfolio_buttons[3] = (Button) findViewById(R.id.build_it_bigger_button_id);
-        portfolio_buttons[4] = (Button) findViewById(R.id.xyz_reader_button_id);
-        portfolio_buttons[5] = (Button) findViewById(R.id.capstone_button_id);
-        final String toast_message = "This button will launch ";
-
-        for (int i = 0; i < portfolio_buttons.length; i++)
-        {
-            makeTheToastOnButtonClick(portfolio_buttons[i], getApplicationContext(), toast_message + (String) portfolio_buttons[i].getText());
-        }
-*/
-
-
-
-
-
     }
 
     @Override
@@ -84,6 +63,14 @@ public class MainActivity extends Activity {
 
         Toast t = Toast.makeText(context, toast_message, toast_duration);
         t.show();
+
+        Intent intent;
+
+        if(buttonText.equalsIgnoreCase("spotify streamer"))
+        {
+            intent = new Intent(context, SpotifyStreamer.class);
+            startActivity(intent);
+        }
     }
 
 

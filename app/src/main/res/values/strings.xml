@@ -11,6 +11,7 @@
     <string name="xyz_reader_title">XYZ Reader</string>
     <string name="capstone_title">Capstone: My Own App</string>
     <string name="button_laucn_app">This button will launch</string>
+    <string name="title_activity_spotify_streamer">SpotifyStreamer</string>
 
 
 </resources>
