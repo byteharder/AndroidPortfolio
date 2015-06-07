@@ -10,6 +10,7 @@
     <string name="build_it_bigger_title">Build It Bigger</string>
     <string name="xyz_reader_title">XYZ Reader</string>
     <string name="capstone_title">Capstone: My Own App</string>
+    <string name="button_laucn_app">This button will launch</string>
 
 
 </resources>

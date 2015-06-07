@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+/*
         Button[] portfolio_buttons = new Button[6];
 
         portfolio_buttons[0] = (Button) findViewById(R.id.spotify_streamer_button_id);
@@ -31,6 +32,8 @@ public class MainActivity extends Activity {
         {
             makeTheToastOnButtonClick(portfolio_buttons[i], getApplicationContext(), toast_message + (String) portfolio_buttons[i].getText());
         }
+*/
+
 
 
 
@@ -59,7 +62,7 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void makeTheToastOnButtonClick(Button button, final Context context, final String string)
+/*    public void makeTheToastOnButtonClick(Button button, final Context context, final String string)
     {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,19 @@ public class MainActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }*/
+
+    public void displayToast(View view)
+    {
+        Button viewButton = (Button) view;
+        String buttonText = (String) viewButton.getText();
+        Context context = getApplicationContext();
+
+        String toast_message = getString(R.string.button_laucn_app)+" "+ buttonText;
+        int toast_duration = Toast.LENGTH_SHORT;
+
+        Toast t = Toast.makeText(context, toast_message, toast_duration);
+        t.show();
     }
 
 
