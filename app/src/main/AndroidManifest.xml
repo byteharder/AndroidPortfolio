@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SpotifyStreamer"
-            android:label="@string/title_activity_spotify_streamer"
+            android:name=".RainOnMe"
+            android:label="@string/title_activity_rain_on_me"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

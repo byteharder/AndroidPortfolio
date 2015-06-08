@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+    private final String LOG_TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,36 +43,18 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-/*    public void makeTheToastOnButtonClick(Button button, final Context context, final String string)
-    {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, string,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 
-    public void displayToast(View view)
-    {
+    public void displayToast(View view) {
         Button viewButton = (Button) view;
         String buttonText = (String) viewButton.getText();
         Context context = getApplicationContext();
 
-        String toast_message = getString(R.string.button_laucn_app)+" "+ buttonText;
+        String toast_message = getString(R.string.open_app) + " " + buttonText + " app";
         int toast_duration = Toast.LENGTH_SHORT;
 
         Toast t = Toast.makeText(context, toast_message, toast_duration);
         t.show();
 
-        Intent intent;
-
-        if(buttonText.equalsIgnoreCase("spotify streamer"))
-        {
-            intent = new Intent(context, SpotifyStreamer.class);
-            startActivity(intent);
-        }
     }
 
 
