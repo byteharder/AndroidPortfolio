@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     private final String LOG_TAG = MainActivity.class.getSimpleName();
     @Override
@@ -52,8 +53,13 @@ public class MainActivity extends Activity {
         String toast_message = getString(R.string.open_app) + " " + buttonText + " app";
         int toast_duration = Toast.LENGTH_SHORT;
 
-        Toast t = Toast.makeText(context, toast_message, toast_duration);
-        t.show();
+        if(buttonText.equalsIgnoreCase("rain on me"))
+        {
+            startActivity(new Intent(context, RainOnMe.class));
+        }else{
+            Toast t = Toast.makeText(context, toast_message, toast_duration);
+            t.show();
+        }
 
     }
 

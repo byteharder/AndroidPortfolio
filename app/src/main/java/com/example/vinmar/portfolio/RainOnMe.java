@@ -1,17 +1,23 @@
 package com.example.vinmar.portfolio;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class RainOnMe extends Activity {
+public class RainOnMe extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rain_on_me);
+        if (savedInstanceState == null)
+        {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment, new RainOnMeFragment())
+                    .commit();
+        }
     }
 
 
